@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ExpressJS</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	<script src="https://cdn.jsdelivr.net/npm/jsmart/dist/jsmart.min.js
+"></script>
+	<script src="/javascripts/run.js"></script>
+	<script src="/javascripts/modules.js"></script>
+
+</head>
+<body>
+  
+  <script id="test_tpl" type="text/x-jsmart-tmpl">
+    Hello <strong>{$name|hello:'Kien'}</strong><br />
+	<input name="name" value="{$name}" onchange="{$module}.setName(this.value);">
+	<button onclick="{$module}.setName('Bong');">Change To Bong</button>
+  </script>
+  
+    <div class="container">
+        <div class="row row-offcanvas row-offcanvas-right">
+            <div class="col-xs-12 col-sm-9">
+                <p class="pull-right visible-xs">
+                    <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+                </p>
+                <div class="jumbotron">
+                    <div id="head" class="template" data-module="head" data-tmpl="test_tpl"></div>
+                    
+					<p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
+					
+					
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+            </div>
+        </div>
+    </div>
+	<script>
+	modules.head = new ModuleHead();
+	modules.head.name = 'Kien Le';
+	</script>
+</body>
+</html>
