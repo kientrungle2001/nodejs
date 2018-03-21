@@ -1,0 +1,6 @@
+Them file vao git: git add .
+Commit file: git commit -am 'Message'
+Update: git pull
+Day len server: git push
+Restore lai file da xoa: git checkout .
+Delete file: git rm file.ext
