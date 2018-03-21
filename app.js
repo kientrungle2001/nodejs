@@ -6,19 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var mysql = require('mysql');
-
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "dbfull5"
-});
-
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-  
-});
   
 var index = require('./routes/index');
 var users = require('./routes/users');
